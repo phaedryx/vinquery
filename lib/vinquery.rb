@@ -27,7 +27,6 @@ class Vinquery
     # use reducable=FALSE to get additional fields like fuel_type
     # use vt=true to get vehicle_type
     # use gvwr=TRUE to get GVWR
-    # http://www.vinquery.com/ws_POQCXTYNO1D/xml_v100_QA7RTS8Y.aspx?accessCode=6958785b-ac0a-4303-8b28-40e14aa836ce&vin=YourVINToDecode&reportType=0&vt=true&gvwr=true
     @uri ||= "#{@url}?accessCode=#{@access_code}&reportType=#{@report_type}&reducable=FALSE&vt=TRUE&gvwr=TRUE"
     url_s = @uri + "&vin=#{@vin}"
     @log.info{"Vinquery#fetch - uri: #{url_s}"}
